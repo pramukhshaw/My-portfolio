@@ -2,6 +2,9 @@
 const navs = document.querySelectorAll('.nav-list li');
 const cube = document.querySelector('.box');
 
+
+const sections = document.querySelectorAll('.section');
+
 const resumelists = document.querySelectorAll('.resume-list');
 const resumeBoxs = document.querySelectorAll('.resume-box');
 
@@ -16,6 +19,11 @@ navs.forEach((nav, idx) => {
 
         // Correctly interpolate idx in transform using backticks
         cube.style.transform = `rotateY(${idx * -90}deg)`; // Fixed template literal
+
+
+        document.querySelector('.section.active').classList.remove('active');
+        sections[idx].classList.add('active');
+       
     });
 });
 
