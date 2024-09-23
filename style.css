@@ -53,7 +53,22 @@ p{
     background: var(--nav-bg-color);
     border-radius: 5rem;
     z-index: 100;
+    animation: animate-nav 1s ease-in-out backwards;
+    animation-delay: 3s;
 }
+
+@keyframes animate-nav{
+    0%{
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%{
+        visibility: visible;
+        opacity: 0;
+    }
+}
+
+
 .nav .nav-list{
     display: flex;
     justify-content: space-evenly;
@@ -105,7 +120,19 @@ opacity: 1;
     transform-origin: 50% 50% -50vw;
     transform: rotateY(-360deg);
     transition: 2s;
+    animation: animate-cube 4s ease-in-out backwards;
 }
+
+@keyframes animate-cube{
+0%{
+    transform: scale(0)rotateY(-360deg);
+}
+100%{
+    transform: scale(1)rotateY(0deg);
+}
+}
+
+
 .section{
     position: absolute;
     width: 100%;
@@ -137,6 +164,12 @@ opacity: 1;
 .section.contact.active{
     visibility: visible;
    
+}
+.section.contact.action-contact{
+    transition-delay: 1.5s;
+}
+.section.contact.action-contact.active{
+    transition-delay: 0s;
 }
 
 .home,
@@ -511,3 +544,104 @@ background: var(--main-color);
 .contact-form .contact-btn .btn{
     cursor: pointer;
 }
+@media screen and (max-width:1200px) {
+    html {
+        font-size: 55%;
+    }
+} 
+@media screen and (max-width:92px) {
+    .section{
+        padding: 0 4%;
+    }
+    .resume,
+    .portfolio{
+        padding-top: 1.5rem;
+        padding-bottom: 27rem;
+    }
+    .contact{
+        padding-top: 1.5rem;
+        padding-bottom: 18rem;
+    }
+}  
+@media screen and (max-width:768px){
+    html{
+        font-size: 50%;
+    }
+    .nav{
+        bottom: 0;
+    }
+    .home,
+     .about{
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 2rem;
+        padding-bottom: 6rem;
+
+    }
+    .about{
+        flex-direction: column;
+    }
+    .img-box{
+        width: 35rem;
+        height: 35rem;
+    }
+    .resume,
+    .portfolio{
+        padding-bottom: 25rem;
+    }
+    .contact{
+        padding-bottom: 16rem;
+    }
+} 
+@media screen and (max-width:600px) {
+    .resume,
+    .portfolio{
+        padding-top: 1rem;
+        padding-bottom: 22rem;
+    }
+    .tab-box{
+        margin-top: 0;
+    }
+    .contact{
+        padding-top: 1rem;
+
+    }
+}
+@media screen and (max-width:400px) {
+    .nav{
+        width: 100%;
+        border-radius: 0;
+    }
+    .home-info,
+    .about-info{
+        text-align: center;
+    }
+    .home-info h1{
+        font-size: 5rem;
+    }
+    .home-info .btn-sci{
+        flex-direction: column-reverse;
+    }
+    .home-info .btn-sci .sci{
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+    .img-box{
+        width: 30rem;
+        height: 30rem;
+    }
+    .about-info .title{
+        text-align: center;
+    }
+}
+@media screen and (max-width:350px) {
+    .img-box{
+        width: 25rem;
+        height: 25rem;
+
+    }
+    .tab-list h3{
+        font-size: 2.3rem;
+    }
+}
+
