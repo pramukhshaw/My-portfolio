@@ -645,3 +645,24 @@ background: var(--main-color);
     }
 }
 
+
+
+
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-list a:hover {
+    color: #0073b1; /* Optional: Add hover color for links */
+}
+
